@@ -5,4 +5,6 @@
 //penulisan app berbeda krn yg ini akan jadi class
 require_once'core/App.php';
 require_once'core/Controller.php';
-require_once'core/Constant.php';
+require_once'config/Config.php';
+
+require_once'core/Database.php';

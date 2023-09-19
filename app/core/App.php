@@ -20,7 +20,7 @@ class App {
           $this->controller = ucfirst($url[0]);
           unset($url[0]);
       }
-    }
+   }
     require_once '../app/controllers/' .$this->controller. '.php';
     //class controller diinstasiasi untuk memanggil method 
     $this->controller = new $this->controller;

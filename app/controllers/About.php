@@ -2,9 +2,11 @@
 class About extends Controller{
   public function index () {
     
+    $data['nama'] = $this->model('user_Model')->getUser();
+    $data['Jurusan'] = 'Kesehatan';
     $data['judul']='Halaman About/index';
     $this->view('templates/header', $data);
-    $this->view('About/index');
+    $this->view('About/index', $data);
     $this->view('templates/footer');
   }
   
