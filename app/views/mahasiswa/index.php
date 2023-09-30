@@ -15,11 +15,11 @@
       <h3>Daftar Mahasiswa</h3>
         <ul class="list-group">
              <?php foreach ($data['mhs'] as $mhs) : ?>
-              <li class="list-group-item">
+             <li class="list-group-item">
                    <?=$mhs['nama'];?> 
-                   <a href="<?=BASEURL;?>/Mahasiswa/detail/<?=$mhs['Id'];?>" class="badge text-bg-primary float-end me-1">detail</a>
-                   <a href="<?=BASEURL;?>/Mahasiswa/ubah/<?=$mhs['Id'];?>" class="badge text-bg-success float-end me-1 tampilModalUbah"  data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?=$mhs['Id'];?>">ubah</a>
-                   <a href="<?=BASEURL;?>/Mahasiswa/hapus/<?=$mhs['Id'];?>" class="badge text-bg-danger float-end me-1" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
+                   <a href="<?//=BASEURL;?>/mahasiswa/detail/<?=$mhs['id'];?>" class="badge text-bg-primary float-end me-1">detail</a>
+                   <a href="<?//=BASEURL;?>/mahasiswa/ubah/<?=$mhs['id'];?>" class="badge text-bg-success float-end me-1 tampilModalUbah"  data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?=$mhs['id'];?>">ubah</a>
+                   <a href="<?//=BASEURL;?>/mahasiswa/hapus/<?=$mhs['id'];?>" class="badge text-bg-danger float-end me-1" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
               </li>
              <?php endforeach ; ?>
         </ul>

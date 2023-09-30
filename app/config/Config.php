@@ -1,6 +1,6 @@
 <?php //file ini ada konstruksi koneksi ke databse
 
-define('BASEURL','http://localhost:8080/Phpmvc/public');
+define('BASEURL','http://localhost:8080/Phpmvc');
 
 define('DB_HOST','127.0.0.1');
 define('DB_USER','root');
