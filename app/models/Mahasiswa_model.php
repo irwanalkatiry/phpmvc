@@ -32,4 +32,16 @@ class Mahasiswa_model{
   $this->db->execute();
    return $this->db->rowCount();
   }
+  public function hapusDataMahasiswa($Id)
+  {
+   $query = "DELETE FROM Mahasiswa WHERE Id=:Id";
+  
+  $this->db->query($query);
+  $this->db->bind('Id',$Id);
+  
+  $this->db->execute();
+  
+   return $this->db->rowCount();
+  
+}
 }

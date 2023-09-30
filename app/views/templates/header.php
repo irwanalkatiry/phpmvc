@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?=$data['judul'];?></title>
     <link rel="stylesheet" href="<?=BASEURL;?>/css/bootstrap.css">
+    <script src="<?=BASEURL;?>/js/jquery.js"></script>
 </head>
 <body>
   
