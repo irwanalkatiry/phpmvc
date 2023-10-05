@@ -42,6 +42,35 @@ class Mahasiswa_model{
   $this->db->execute();
   
    return $this->db->rowCount();
+  }
   
-}
+  public function ubahDataMahasiswa($data)
+  {
+   $query = "UPDATE Mahasiswa
+             SET nama =:nama,
+                 nim =:nim,
+                 jurusan =:jurusan
+             WHERE id =:id
+             "; 
+  
+  $this->db->query($query);
+  $this->db->bind('nama',$data['nama']);
+  $this->db->bind('nim',$data['nim']);
+  $this->db->bind('jurusan',$data['jurusan']);
+  $this->db->bind('id',$data['id']);
+  
+  $this->db->execute();
+   return $this->db->rowCount();
+  }
+  public function cariDataMahasiswa ()
+  {
+    $keyword =$_POST['keyword'];
+    $query = "
+    SELECT * FROM Mahasiswa WHERE nama LIKE :keyword
+    ";
+    $this->db->bind('keyword', '%keyword%');
+    $this->db->query($query);
+    
+    return $this->db->resultSet();
+  }
 }

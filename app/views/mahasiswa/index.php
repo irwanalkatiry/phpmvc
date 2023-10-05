@@ -5,21 +5,39 @@
       <?php Flasher::flash(); ?>
     </div>
   </div>
+
+  <div class="row mb-2">
+    <div class="col lg-6">
+      <form action="<?=BASEURL;?>/Mahasiswa/Cari" method="post">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Masukkan nama yang kamu cari.."autocomplete="off" autofocus="on" id="keyword" name="keyword">
+          <button class="btn btn-primary" type="submit" id="tombolCari" name="cari">Cari</button>
+        </div>
+      </form>
+    </div>
+  </div>
   
-  <div class="row">
+  
+  
+  <div class="row mb-2">
     <div class="col lg-6">
       <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah Data Mahasiswa
       </button>
-      <br></br>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col lg-6">
       <h3>Daftar Mahasiswa</h3>
+      
         <ul class="list-group">
              <?php foreach ($data['mhs'] as $mhs) : ?>
              <li class="list-group-item">
                    <?=$mhs['nama'];?> 
-                   <a href="<?//=BASEURL;?>/mahasiswa/detail/<?=$mhs['id'];?>" class="badge text-bg-primary float-end me-1">detail</a>
-                   <a href="<?//=BASEURL;?>/mahasiswa/ubah/<?=$mhs['id'];?>" class="badge text-bg-success float-end me-1 tampilModalUbah"  data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?=$mhs['id'];?>">ubah</a>
-                   <a href="<?//=BASEURL;?>/mahasiswa/hapus/<?=$mhs['id'];?>" class="badge text-bg-danger float-end me-1" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
+                   <a href="<?=BASEURL;?>/Mahasiswa/detail/<?=$mhs['id'];?>" class="badge text-bg-primary float-end me-1">detail</a>
+                   <a href="<?=BASEURL;?>/Mahasiswa/ubah/<?=$mhs['id'];?>" class="badge text-bg-success float-end me-1 tampilModalUbah"  data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?=$mhs['id'];?>">ubah</a>
+                   <a href="<?=BASEURL;?>/Mahasiswa/hapus/<?=$mhs['id'];?>" class="badge text-bg-danger float-end me-1" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
               </li>
              <?php endforeach ; ?>
         </ul>
@@ -38,6 +56,7 @@
       <div class="modal-body">
         <form action="<?=BASEURL;?>/Mahasiswa/tambah" method="post">
           <div class="mb-3">
+            <input type="hidden" name="id" id="id">
             <label for="nama" class="form-label">Nama</label>
             <input type="text" class="form-control" id="nama" name="nama">
           </div>
